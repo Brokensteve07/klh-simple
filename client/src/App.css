@@ -1,292 +1,554 @@
-/* D:\KLH-Simple\client\src\App.css */
-/* NEW CHARCOAL & ORANGE THEME */
+/* -------------------------------------------------------------------
+   KLH Connect Stylesheet - ULTRA PREMIUM EDITION V2
+   Theme: Vibrant Purple Gradient with Modern Card Design
+   Inspired by: Modern Education Platforms
+---------------------------------------------------------------------- */
 
+/* 1. CSS Variables - Vibrant Purple Theme */
 :root {
-  /* New Theme Colors */
-  --theme-charcoal: #222222;
-  --theme-dark-gray: #333333;
-  --theme-light-gray: #aaaaaa;
-  --theme-white: #eeeeee;
-  --theme-orange: #f39c12;
-  --theme-red: #e74c3c;
-  --theme-green: #2ecc71;
-  --theme-blue: #3498db;
-  --theme-input-bg: #444444;
-  --theme-border-color: #555555;
+    --theme-primary-purple: #6C5CE7;
+    --theme-primary-deep: #5F27CD;
+    --theme-primary-light: #A29BFE;
+    --theme-secondary-blue: #00D2FF;
+    --theme-secondary-cyan: #3AE1FF;
+    --theme-accent-pink: #FD79A8;
+    --theme-accent-orange: #FDCB6E;
+    --theme-text-dark: #2D3436;
+    --theme-text-medium: #636E72;
+    --theme-text-light: #FFFFFF;
+    --theme-bg-light: #F8F9FA;
+    --theme-bg-white: #FFFFFF;
+    --theme-card-shadow: rgba(108, 92, 231, 0.15);
+    --theme-hover-shadow: rgba(108, 92, 231, 0.25);
+}
 
-  /* Legacy Colors (for buttons) */
-  --primary-color: var(--theme-orange); /* Primary is now Orange */
-  --secondary-color: var(--theme-green);
-  --danger-color: var(--theme-red);
-  --warning-color: var(--theme-orange);
-  --bg-light: var(--theme-charcoal);
-  --text-dark: var(--theme-white);
-  --header-bg: var(--theme-dark-gray);
+/* 2. Global Reset & Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--theme-charcoal);
-  color: var(--theme-white);
-  margin: 0;
-  line-height: 1.6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--theme-bg-light);
+    color: var(--theme-text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--theme-orange);
-  margin-top: 0;
-  font-weight: 600;
+h1, h2, h3 {
+    color: var(--theme-text-dark);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
 }
 
-/* --- KLH Header --- */
-.klh-top-bar {
-  display: none; /* Per your request to remove */
+h1 {
+    font-size: 3.5em;
 }
 
+h2 {
+    font-size: 2.5em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--theme-primary-purple);
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 3. Header - Clean & Floating */
 .klh-main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: var(--theme-dark-gray);
-  border-bottom: 2px solid var(--theme-orange);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: var(--theme-bg-white);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.klh-main-header:hover {
+    box-shadow: 0 6px 40px rgba(108, 92, 231, 0.12);
 }
 
 .klh-logo {
-  height: 50px;
-  width: auto;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.klh-logo:hover {
+    transform: scale(1.05);
 }
 
 .klh-nav-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .klh-nav-links a {
-  color: var(--theme-white);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.2s, color 0.2s;
+    color: var(--theme-text-medium);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.klh-nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--theme-primary-purple);
+    border-radius: 2px;
+    transition: width 0.3s ease;
 }
 
 .klh-nav-links a:hover {
-  background-color: var(--theme-orange);
-  color: var(--theme-charcoal);
+    color: var(--theme-primary-purple);
+    background-color: rgba(108, 92, 231, 0.08);
 }
 
-.klh-nav-links .user-info {
-  color: var(--theme-light-gray);
-  font-size: 0.9em;
-  margin-left: 10px;
+.klh-nav-links a:hover::after {
+    width: 60%;
 }
 
-/* --- Breadcrumb & Page Titles --- */
-.klh-content-wrapper {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
+.user-info {
+    font-weight: 700;
+    color: var(--theme-primary-purple);
+    padding: 10px 18px;
+    background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(0, 210, 255, 0.1));
+    border-radius: 10px;
+    font-size: 0.9em;
 }
 
-.klh-breadcrumb {
-  font-size: 0.9em;
-  color: var(--theme-light-gray);
-  margin-bottom: 10px;
+/* 4. Buttons - Vibrant & Modern */
+.btn {
+    padding: 14px 36px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1em;
+    letter-spacing: 0.3px;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    min-width: 140px;
+    text-transform: none;
 }
 
-.klh-breadcrumb a {
-  color: var(--theme-orange);
-  text-decoration: none;
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
 }
 
-.klh-page-title {
-  font-size: 2.2em;
-  font-weight: 700;
-  color: var(--theme-orange);
-  border-bottom: 1px solid var(--theme-border-color);
-  padding-bottom: 10px;
-  margin-bottom: 30px;
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
-/* --- Global Button Styles --- */
-button, .btn {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.1s, box-shadow 0.2s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 1em;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-button:hover, .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.btn-primary {
+    background: linear-gradient(135deg, #6C5CE7 0%, #00D2FF 100%);
+    color: white;
+    box-shadow: 0 8px 24px rgba(108, 92, 231, 0.3);
 }
 
-.btn-primary { background-color: var(--primary-color); color: var(--theme-charcoal); }
-.btn-success { background-color: var(--secondary-color); color: white; }
-.btn-danger { background-color: var(--danger-color); color: white; }
-.btn-warning { background-color: var(--warning-color); color: var(--theme-charcoal); }
-.btn-light { background-color: var(--theme-input-bg); color: var(--theme-white); border: 1px solid var(--theme-border-color); }
-
-/* --- Forms and Inputs (Dark Theme) --- */
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
-input[type="datetime-local"],
-input[type="tel"],
-textarea, 
-select {
-  padding: 12px;
-  border: 1px solid var(--theme-border-color);
-  border-radius: 4px;
-  width: 100%;
-  box-sizing: border-box;
-  background-color: var(--theme-input-bg);
-  color: var(--theme-white);
-  font-size: 1em;
+.btn-primary:hover {
+    box-shadow: 0 12px 36px rgba(108, 92, 231, 0.4);
 }
 
-.form-group {
-  margin-bottom: 20px;
-  text-align: left;
+.btn-danger {
+    background: linear-gradient(135deg, #FF6B6B, #EE5A6F);
+    color: white;
+    box-shadow: 0 8px 24px rgba(255, 107, 107, 0.3);
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: var(--theme-light-gray);
+.btn-success {
+    background: linear-gradient(135deg, #00B894, #00CEC9);
+    color: white;
+    box-shadow: 0 8px 24px rgba(0, 184, 148, 0.3);
 }
 
-/* Login/Register Form Container */
-.form-container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 30px;
-  background-color: var(--theme-dark-gray);
-  border-radius: 8px;
-  border: 1px solid var(--theme-border-color);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+.btn-warning {
+    background: linear-gradient(135deg, #FDCB6E, #FD79A8);
+    color: white;
+    box-shadow: 0 8px 24px rgba(253, 203, 110, 0.3);
 }
 
-/* --- Containers and Cards --- */
-.page-container {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 30px;
-  background: var(--theme-dark-gray);
-  color: var(--theme-white);
-  border: 1px solid var(--theme-border-color);
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-.list-item-card {
-  padding: 20px;
-  border-radius: 8px;
-  background-color: var(--theme-dark-gray);
-  margin-bottom: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  border: 1px solid var(--theme-border-color);
-}
-
-/* Special Status Colors */
-.status-lost { border-left: 5px solid var(--danger-color); }
-.status-found { border-left: 5px solid var(--secondary-color); }
-.status-event { border-left: 5px solid var(--theme-orange); }
-
-/* --- Homepage Card Theme --- */
+/* 5. Homepage - Hero Section */
 .homepage-container {
-  text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
-.welcome-header {
-  font-size: 2.5em;
-  font-weight: 300;
-  color: var(--theme-white);
-  margin-bottom: 10px;
-}
+/* Hero section styling is handled via inline styles in App.js */
 
-.welcome-subheader {
-  font-size: 1.1em;
-  color: var(--theme-light-gray);
-  margin-bottom: 40px;
-}
-
+/* 6. Feature Cards - Modern Card Design */
 .feature-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 36px;
+    margin: 60px 0;
 }
 
 .feature-card {
-  background-color: var(--theme-dark-gray);
-  border: 1px solid var(--theme-border-color);
-  border-radius: 12px;
-  padding: 30px;
-  width: 300px;
-  text-align: left;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    background: var(--theme-bg-white);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(108, 92, 231, 0.08);
+    box-shadow: 0 8px 30px var(--theme-card-shadow);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--theme-primary-purple), var(--theme-secondary-blue));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  border-color: var(--theme-orange);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 50px var(--theme-hover-shadow);
+    border-color: rgba(108, 92, 231, 0.2);
 }
 
 .card-title {
-  font-size: 1.5em;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--theme-orange);
+    color: var(--theme-primary-deep);
+    margin: 16px 0 12px;
+    font-size: 1.8em;
+    font-weight: 800;
 }
 
 .card-description {
-  font-size: 1em;
-  color: var(--theme-light-gray);
-  margin-bottom: 25px;
-  flex-grow: 1;
+    font-size: 1.05em;
+    color: var(--theme-text-medium);
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 20px;
 }
 
-/* --- Form Error/Success Messages --- */
-.form-error, .form-success {
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid;
-  margin-bottom: 15px;
-  text-align: center;
+/* 7. Form Cards - Clean & Professional */
+.form-container, .form-card {
+    background: var(--theme-bg-white);
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid rgba(108, 92, 231, 0.1);
 }
 
-.form-error {
-  background-color: #5d2a2a;
-  color: #ffcccc;
-  border-color: var(--theme-red);
+.page-container {
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 0 60px;
 }
 
-.form-success {
-  background-color: #2a5d2a;
-  color: #ccffcc;
-  border-color: var(--theme-green);
+.page-container h1 {
+    text-align: center;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--theme-primary-purple), var(--theme-secondary-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3.5em;
 }
 
+.page-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--theme-primary-deep);
+}
+
+.page-container p.subtitle {
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--theme-text-medium);
+    font-size: 1.2em;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+/* 8. Form Inputs - Modern & Clean */
+.form-group {
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--theme-text-dark);
+    font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+textarea {
+    width: 100%;
+    padding: 16px 20px;
+    background: var(--theme-bg-white);
+    border: 2px solid #E1E4E8;
+    border-radius: 12px;
+    font-size: 1em;
+    color: var(--theme-text-dark);
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--theme-primary-purple);
+    background: var(--theme-bg-white);
+    box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #B2B9BF;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 160px;
+    line-height: 1.6;
+}
+
+/* 9. Tabs - Segmented Control */
+.tab-group {
+    display: flex;
+    margin-bottom: 40px;
+    background: var(--theme-bg-light);
+    border-radius: 14px;
+    padding: 4px;
+    gap: 4px;
+}
+
+.tab-button {
+    background: transparent;
+    color: var(--theme-text-medium);
+    padding: 14px 28px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    flex: 1;
+    border-radius: 12px;
+}
+
+.tab-button.active {
+    background: var(--theme-bg-white);
+    color: var(--theme-primary-purple);
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.15);
+}
+
+.tab-button:hover:not(.active) {
+    color: var(--theme-primary-purple);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* 10. Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card,
+.form-card,
+.form-container {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* 11. Utility Classes */
+.gradient-text {
+    background: linear-gradient(135deg, var(--theme-primary-purple), var(--theme-secondary-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-soft {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-medium {
+    box-shadow: 0 12px 40px rgba(108, 92, 231, 0.15);
+}
+
+.shadow-strong {
+    box-shadow: 0 20px 60px rgba(108, 92, 231, 0.25);
+}
+
+/* 12. Mobile Responsiveness */
+@media (max-width: 768px) {
+    .klh-main-header {
+        padding: 14px 24px;
+        flex-wrap: wrap;
+    }
+    
+    .klh-nav-links {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-top: 12px;
+    }
+    
+    .klh-nav-links a {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+    
+    .homepage-container {
+        padding: 0 20px;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .feature-card {
+        padding: 32px;
+    }
+    
+    .card-title {
+        font-size: 1.6em;
+    }
+    
+    .form-container, .form-card {
+        padding: 32px;
+        border-radius: 20px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .page-container {
+        padding: 0 20px;
+        margin: 40px auto;
+    }
+    
+    .page-container h1 {
+        font-size: 2.5em;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+    
+    .tab-group {
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .btn {
+        padding: 12px 28px;
+        font-size: 0.95em;
+    }
+    
+    .user-info {
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .klh-logo {
+        height: 40px;
+    }
+    
+    .feature-card {
+        padding: 24px;
+    }
+    
+    .form-container, .form-card {
+        padding: 24px;
+    }
+}

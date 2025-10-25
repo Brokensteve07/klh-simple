@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
-import { FirebaseProvider } from './FirebaseContext.jsx';
+import App from './App'; // Using simplest path (no .jsx)
+import { FirebaseProvider } from './FirebaseContext'; // Using simplest path (no .jsx)
 
 // Function to check if the required environment variables are available
 // We set this to always return true for local development purposes.
@@ -27,6 +27,7 @@ if (rootElement) {
         // Render the full application because the check is bypassed
         ReactDOM.createRoot(rootElement).render(
             <React.StrictMode>
+                {/* Ensure the FirebaseProvider is used to wrap the whole app */}
                 <FirebaseProvider>
                     <App />
                 </FirebaseProvider>
