@@ -1,0 +1,292 @@
+/* D:\KLH-Simple\client\src\App.css */
+/* NEW CHARCOAL & ORANGE THEME */
+
+:root {
+  /* New Theme Colors */
+  --theme-charcoal: #222222;
+  --theme-dark-gray: #333333;
+  --theme-light-gray: #aaaaaa;
+  --theme-white: #eeeeee;
+  --theme-orange: #f39c12;
+  --theme-red: #e74c3c;
+  --theme-green: #2ecc71;
+  --theme-blue: #3498db;
+  --theme-input-bg: #444444;
+  --theme-border-color: #555555;
+
+  /* Legacy Colors (for buttons) */
+  --primary-color: var(--theme-orange); /* Primary is now Orange */
+  --secondary-color: var(--theme-green);
+  --danger-color: var(--theme-red);
+  --warning-color: var(--theme-orange);
+  --bg-light: var(--theme-charcoal);
+  --text-dark: var(--theme-white);
+  --header-bg: var(--theme-dark-gray);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--theme-charcoal);
+  color: var(--theme-white);
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--theme-orange);
+  margin-top: 0;
+  font-weight: 600;
+}
+
+/* --- KLH Header --- */
+.klh-top-bar {
+  display: none; /* Per your request to remove */
+}
+
+.klh-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--theme-dark-gray);
+  border-bottom: 2px solid var(--theme-orange);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.klh-logo {
+  height: 50px;
+  width: auto;
+}
+
+.klh-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.klh-nav-links a {
+  color: var(--theme-white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.klh-nav-links a:hover {
+  background-color: var(--theme-orange);
+  color: var(--theme-charcoal);
+}
+
+.klh-nav-links .user-info {
+  color: var(--theme-light-gray);
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+/* --- Breadcrumb & Page Titles --- */
+.klh-content-wrapper {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.klh-breadcrumb {
+  font-size: 0.9em;
+  color: var(--theme-light-gray);
+  margin-bottom: 10px;
+}
+
+.klh-breadcrumb a {
+  color: var(--theme-orange);
+  text-decoration: none;
+}
+
+.klh-page-title {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: var(--theme-orange);
+  border-bottom: 1px solid var(--theme-border-color);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+/* --- Global Button Styles --- */
+button, .btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1em;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary { background-color: var(--primary-color); color: var(--theme-charcoal); }
+.btn-success { background-color: var(--secondary-color); color: white; }
+.btn-danger { background-color: var(--danger-color); color: white; }
+.btn-warning { background-color: var(--warning-color); color: var(--theme-charcoal); }
+.btn-light { background-color: var(--theme-input-bg); color: var(--theme-white); border: 1px solid var(--theme-border-color); }
+
+/* --- Forms and Inputs (Dark Theme) --- */
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="datetime-local"],
+input[type="tel"],
+textarea, 
+select {
+  padding: 12px;
+  border: 1px solid var(--theme-border-color);
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--theme-input-bg);
+  color: var(--theme-white);
+  font-size: 1em;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--theme-light-gray);
+}
+
+/* Login/Register Form Container */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: var(--theme-dark-gray);
+  border-radius: 8px;
+  border: 1px solid var(--theme-border-color);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Containers and Cards --- */
+.page-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 30px;
+  background: var(--theme-dark-gray);
+  color: var(--theme-white);
+  border: 1px solid var(--theme-border-color);
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.list-item-card {
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--theme-dark-gray);
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  border: 1px solid var(--theme-border-color);
+}
+
+/* Special Status Colors */
+.status-lost { border-left: 5px solid var(--danger-color); }
+.status-found { border-left: 5px solid var(--secondary-color); }
+.status-event { border-left: 5px solid var(--theme-orange); }
+
+/* --- Homepage Card Theme --- */
+.homepage-container {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-header {
+  font-size: 2.5em;
+  font-weight: 300;
+  color: var(--theme-white);
+  margin-bottom: 10px;
+}
+
+.welcome-subheader {
+  font-size: 1.1em;
+  color: var(--theme-light-gray);
+  margin-bottom: 40px;
+}
+
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: var(--theme-dark-gray);
+  border: 1px solid var(--theme-border-color);
+  border-radius: 12px;
+  padding: 30px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  border-color: var(--theme-orange);
+}
+
+.card-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--theme-orange);
+}
+
+.card-description {
+  font-size: 1em;
+  color: var(--theme-light-gray);
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+/* --- Form Error/Success Messages --- */
+.form-error, .form-success {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form-error {
+  background-color: #5d2a2a;
+  color: #ffcccc;
+  border-color: var(--theme-red);
+}
+
+.form-success {
+  background-color: #2a5d2a;
+  color: #ccffcc;
+  border-color: var(--theme-green);
+}
+
